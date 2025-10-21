@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'core/routing/routes.dart';
 import 'injection_container.dart' as di;
 
 import 'core/routing/app_router.dart';
@@ -16,13 +17,14 @@ class MyApp extends StatelessWidget {
 
    @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home:  Container()
-    );
+     return MaterialApp(
+       theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
+         useMaterial3: false,
+       ),
+       debugShowCheckedModeBanner: false,
+        initialRoute: Routes.splashScreen,
+       onGenerateRoute:appRouter.generateRoute     );
   }
 }
 

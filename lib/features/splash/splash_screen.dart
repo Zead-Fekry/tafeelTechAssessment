@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/tafeel_logo.jpg',
+              'assets/tafeelit_logo.jpg',
               width: 120,
               height: 120,
             ),
