@@ -18,13 +18,23 @@ class _UsersScreenState extends State<UsersScreen> {
   @override
   void initState() {
     super.initState();
-    // fetch initial
+
+    // Initial fetch
     context.read<GetUsersCubit>().fetchInitialUsers();
 
+    // Add scroll listener for infinite scroll
     _scrollController.addListener(() {
       if (_scrollController.position.pixels >=
           _scrollController.position.maxScrollExtent - 50) {
-        // near bottom
+        context.read<GetUsersCubit>().fetchMoreUsers();
+      }
+    });
+
+    // One-time check to load next page if first list isn't scrollable
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!_scrollController.hasClients ||
+          !_scrollController.position.hasViewportDimension ||
+          _scrollController.position.maxScrollExtent == 0) {
         context.read<GetUsersCubit>().fetchMoreUsers();
       }
     });

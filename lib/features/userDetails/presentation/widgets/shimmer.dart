@@ -4,7 +4,7 @@ import 'package:shimmer/shimmer.dart';
 
 Widget shimmerList() {
     return ListView.builder(
-      itemCount: 8,
+      itemCount: 16,
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),

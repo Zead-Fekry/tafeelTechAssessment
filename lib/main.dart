@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'core/routing/routes.dart';
 import 'features/userDetails/presentation/manager/get_users_cubit.dart';
+import 'features/users/presentation/manager/get_user_cubit.dart';
 import 'injection_container.dart' as di;
 
 import 'core/routing/app_router.dart';
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
        providers:
        [
          BlocProvider(create: (_) => di.sl<GetUsersCubit>()),
+         BlocProvider(create: (_) => di.sl<GetSingleUserCubit>()),
        ],
        child: MaterialApp(
          theme: ThemeData(
