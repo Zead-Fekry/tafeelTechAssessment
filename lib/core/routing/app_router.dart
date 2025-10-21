@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:tech_assessment/core/routing/routes.dart';
 
 import '../../features/splash/splash_screen.dart';
+import '../../features/userDetails/presentation/screens/home_page.dart';
 
 
 class AppRouter
@@ -21,6 +22,10 @@ Route generateRoute(RouteSettings settings)
     case Routes.splashScreen:
       return MaterialPageRoute(
         builder: (context) =>  SplashScreen(),
+      );
+    case Routes.usersScreen:
+      return MaterialPageRoute(
+        builder: (context) =>  UsersScreen(),
       );
     default:
       SystemNavigator.pop();
